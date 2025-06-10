@@ -11,3 +11,18 @@ def get_chars_dict(text):
         else:
             char_dict[char] = 1
     return char_dict
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_dict(chars_dict):
+    sorted_list = []
+    for c in chars_dict:
+        if c.isalpha():
+            entry = {
+                "char": c,
+                "num": chars_dict[c]
+            }
+            sorted_list.append(entry)
+    sorted_list.sort(reverse = True, key=sort_on)
+    return sorted_list
